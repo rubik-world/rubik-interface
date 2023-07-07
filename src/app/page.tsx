@@ -17,10 +17,15 @@ export default function Home() {
   if (width < 768) {
     return (
       <>
-        <main className="flex min-h-screen flex-col justify-between relative">
+        <main
+          className="flex flex-col relative"
+          style={{
+            backgroundImage: `url(/mobile-bg.png)`
+          }}
+        >
           <Header />
           <div className={"flex flex-col items-center"}>
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex items-center gap-4 mb-4 mt-8">
               <LogoIcon className={"w-[42px] h-[50px]"} />
               <div className={"text-[48px] font-bold title-shadow"}>RUBIK</div>
             </div>
