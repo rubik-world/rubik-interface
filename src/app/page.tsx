@@ -44,18 +44,26 @@ export default function Home() {
               </div>
               <div />
             </div>
-            <div className={"flex flex-col"}>
+            <div
+              className={`flex flex-col transition-all duration-700 -ml-6 ${
+                videoEnded ? "opacity-100 pb-4" : "opacity-0 pb-0"
+              }`}
+            >
               <div
                 style={{ textShadow: "1px 1px 1px blue" }}
                 className={
-                  "uppercase text-[30px] font-bold text-[#DEDFE3] mt-auto text-center pb-4 text-center"
+                  "uppercase text-[30px] font-bold text-[#DEDFE3] mt-auto text-center pb-4"
                 }
               >
-                We democratize AI for everyone
+                We democratize AI for ALL
               </div>
             </div>
-            <div className="flex items-center">
-              <div className={"w-[400px] max-w-full"}>
+            <div className={`flex items-center`}>
+              <div
+                className={`w-[400px] transition-all duration-700 max-w-full ${
+                  videoEnded ? "opacity-100 mt-0" : "opacity-0 mt-4"
+                }`}
+              >
                 <div>
                   <div className="flex items-center gap-4"></div>
                   <div style={{ textShadow: "1px 1px 1px blue" }}>
