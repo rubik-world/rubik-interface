@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { LogoIcon } from "@/components/svg/Logo";
 import { TwitterCircleIcon } from "@/components/svg/TwitterCircle";
@@ -5,13 +6,23 @@ import { DiscordCircleIcon } from "@/components/svg/DiscordCircle";
 import { ArrowIcon } from "@/components/svg/Arrow";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { useState } from "react";
 
 export default function Home() {
+  const [videoEnded, setVideoEnded] = useState(false);
+
   return (
     <main className="flex min-h-screen flex-col justify-between relative">
       <video
         src="/banner.mp4"
-        className={"absolute w-full h-full"}
+        className={`absolute w-full h-full ${videoEnded ? "hidden" : ""}`}
+        autoPlay={true}
+        muted={true}
+        onEnded={() => setVideoEnded(true)}
+      />
+      <video
+        src="/banner-loop.mp4"
+        className={`absolute w-full h-full ${videoEnded ? "" : "hidden"}`}
         loop={true}
         autoPlay={true}
         muted={true}
