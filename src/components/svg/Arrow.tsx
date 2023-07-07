@@ -1,9 +1,8 @@
-export const ArrowIcon = () => {
+export const ArrowIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="23"
-      height="28"
+      className={className}
       viewBox="0 0 23 28"
       fill="none"
     >

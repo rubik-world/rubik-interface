@@ -7,9 +7,75 @@ import { ArrowIcon } from "@/components/svg/Arrow";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useState } from "react";
+import Image from "next/image";
+import { useWindowSize } from "usehooks-ts";
 
 export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
+  const { width } = useWindowSize();
+
+  if (width < 768) {
+    return (
+      <>
+        <main className="flex min-h-screen flex-col justify-between relative">
+          <Header />
+          <div className={"flex flex-col items-center"}>
+            <div className="flex items-center gap-4 mb-4">
+              <LogoIcon className={"w-[42px] h-[50px]"} />
+              <div className={"text-[48px] font-bold title-shadow"}>RUBIK</div>
+            </div>
+            <div className={"uppercase title-shadow text-[20px]"}>
+              <div>THE World`s FIRST </div>
+              <div>MODULAR BLOCKCHAIN </div>
+              <div>FOR Generative ai</div>
+            </div>
+            <div>
+              <Image
+                src={"/mobile-banner.png"}
+                alt={"banner"}
+                width={400}
+                height={400}
+                className={"-mt-12"}
+              />
+            </div>
+            <div
+              style={{ textShadow: "1px 1px 1px blue" }}
+              className={
+                "uppercase text-[22px] font-bold text-[#DEDFE3] text-center -mt-16"
+              }
+            >
+              We democratize
+            </div>
+            <div
+              style={{ textShadow: "1px 1px 1px blue" }}
+              className={
+                "uppercase text-[22px] font-bold text-[#DEDFE3] text-center"
+              }
+            >
+              AI for ALL
+            </div>
+
+            <div className={"flex items-start gap-2 mt-8"}>
+              <ArrowIcon className={"w-[18px] h-[20px]"} />
+              <Link
+                href={""}
+                target={"_blank"}
+                className={"text-[#FF9077] text-[18px] underline -mt-2"}
+              >
+                READ WHITEPAPER
+                <div className={"text-[14px]"}>(ALPHA VERSION)</div>
+              </Link>
+            </div>
+            <div className={"flex items-center mt-6 gap-3"}>
+              <TwitterCircleIcon className={"w-[42px] h-[42px]"} />
+              <DiscordCircleIcon className={"w-[42px] h-[42px]"} />
+            </div>
+          </div>
+          <Footer />
+        </main>
+      </>
+    );
+  }
 
   return (
     <main className="flex min-h-screen flex-col justify-between relative">
@@ -18,6 +84,9 @@ export default function Home() {
         className={`absolute w-full h-full ${videoEnded ? "hidden" : ""}`}
         autoPlay={true}
         muted={true}
+        onTimeUpdate={e => {
+          if (e.timeStamp > 4000) setVideoEnded(true);
+        }}
         onEnded={() => setVideoEnded(true)}
       />
       <video
@@ -29,15 +98,27 @@ export default function Home() {
       />
       <div className={"absolute inset-0 flex flex-col justify-between"}>
         <Header />
-        <div className={"h-full"}>
-          <div className="flex px-10 justify-between h-full pb-8">
+        <div className={"h-full md:pt-0 pt-12"}>
+          <div
+            className={
+              "flex md:flex-row flex-col md:pl-10 md:pr-24 px-6 justify-between h-full pb-8"
+            }
+          >
             <div
-              className={"w-[460px] max-w-full flex flex-col justify-between"}
+              className={
+                "w-[460px] max-w-full flex flex-col md:justify-between items-center md:items-start"
+              }
             >
-              <LogoIcon />
+              <Image
+                src={"/logo.svg"}
+                width={82}
+                height={96}
+                alt={"logo"}
+                className={`md:w-[82px] md:h-[96px] w-[52] h-[56px]`}
+              />
               <div
                 className={
-                  "md:text-[134px] text-[52px] font-bold logo-shadow tracking-wider flex items-center -mt-20 -rotate-90"
+                  "md:text-[134px] text-[72px] font-bold logo-shadow tracking-wider flex items-center md:-mt-20 md:-rotate-90"
                 }
               >
                 RUBIK
@@ -45,7 +126,7 @@ export default function Home() {
               <div />
             </div>
             <div
-              className={`flex flex-col transition-all duration-700 -ml-6 ${
+              className={`flex flex-col transition-all duration-700 md:-ml-6 ${
                 videoEnded ? "opacity-100 pb-4" : "opacity-0 pb-0"
               }`}
             >
@@ -75,7 +156,7 @@ export default function Home() {
                 </div>
 
                 <div className={"flex items-start ml-auto gap-2 mt-8"}>
-                  <ArrowIcon />
+                  <ArrowIcon className={"w-[28px] h-[28px]"} />
                   <Link
                     href={""}
                     target={"_blank"}
