@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255,255,255;
+  --background-rgb: 0,3,11;
+  --header-background-rgb: 50,72,243;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 0,3,11;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgba(var(--background-rgb));
+  font-family: Chakra Petch, sans-serif !important;
+}
+
+.header {
+  @apply h-[72px] bg-[rgba(var(--header-background-rgb))] w-[460px] max-w-full mx-auto uppercase flex items-center justify-center;
+}
+
+.header-triangle {
+  @apply absolute w-0 h-0;
+}
+.header-triangle-left {
+  @apply header-triangle border-t-[80px] border-r-[80px] -left-[72px] top-0;
+  border-width: 0 72px 72px 0;
+  border-color: transparent rgba(var(--header-background-rgb)) transparent transparent;
+}
+.header-triangle-right {
+  @apply header-triangle -right-[72px] top-0;
+  border-width: 72px 72px 0 0;
+  border-color: rgba(var(--header-background-rgb)) transparent transparent transparent;
+}
+
+.footer {
+  @apply h-[60px] bg-[rgba(var(--header-background-rgb))] w-[220px] max-w-full mx-auto flex items-center justify-center;
+}
+
+.footer-triangle-left {
+  @apply header-triangle border-t-[80px] border-r-[80px] -left-[60px] top-0;
+  border-width: 0 0 60px 60px;
+  border-color: transparent transparent rgba(var(--header-background-rgb)) transparent;
+}
+.footer-triangle-right {
+  @apply header-triangle -right-[60px] top-0;
+  border-width: 60px 0 0 60px;
+  border-color:  transparent transparent transparent rgba(var(--header-background-rgb));
+}
+
+.logo-shadow {
+  text-shadow: 0 0 100px #596AFF;
+}
+
+.vertical-tb {
+  writing-mode: vertical-rl;
+}
+
