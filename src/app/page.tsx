@@ -14,6 +14,10 @@ export default function Home() {
   const [videoEnded, setVideoEnded] = useState(false);
   const { width } = useWindowSize();
 
+  if (!width) {
+    return <></>;
+  }
+
   if (width < 768) {
     return (
       <>
@@ -110,7 +114,7 @@ export default function Home() {
         <div className={"h-full md:pt-0 pt-12"}>
           <div
             className={
-              "flex md:flex-row flex-col md:pl-10 md:pr-24 px-6 justify-between h-full pb-8"
+              "flex md:flex-row flex-col md:pl-10 xl:pr-8 px-6 justify-between h-full pb-8"
             }
           >
             <div
