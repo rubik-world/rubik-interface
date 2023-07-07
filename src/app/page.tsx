@@ -86,7 +86,9 @@ export default function Home() {
     <main className="flex min-h-screen flex-col justify-between relative">
       <video
         src="/banner.mp4"
-        className={`absolute w-full h-full ${videoEnded ? "hidden" : ""}`}
+        className={`absolute object-cover w-full h-full ${
+          videoEnded ? "hidden" : ""
+        }`}
         autoPlay={true}
         muted={true}
         onTimeUpdate={e => {
@@ -96,7 +98,9 @@ export default function Home() {
       />
       <video
         src="/banner-loop.mp4"
-        className={`absolute w-full h-full ${videoEnded ? "" : "hidden"}`}
+        className={`absolute object-cover w-full h-full ${
+          videoEnded ? "" : "hidden"
+        }`}
         loop={true}
         autoPlay={true}
         muted={true}
