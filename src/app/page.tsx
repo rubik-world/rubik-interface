@@ -131,7 +131,7 @@ export default function Home() {
               />
               <div
                 className={
-                  "md:text-[134px] text-[72px] font-bold logo-shadow tracking-wider flex items-center md:-mt-20 md:-rotate-90"
+                  "md:text-[134px] text-[72px] font-bold logo-shadow tracking-wider flex items-center pt-32 md:-mt-20 md:-rotate-90"
                 }
               >
                 RUBIK
@@ -161,7 +161,7 @@ export default function Home() {
                 <div>
                   <div className="flex items-center gap-4"></div>
                   <div style={{ textShadow: "1px 1px 1px blue" }}>
-                    <div className={"md:text-[40px] text-[22px] font-bold"}>
+                    <div className={"md:text-[36px] text-[22px] font-bold"}>
                       <div>THE WORLD`S FIRST MODULAR</div>
                       <div>BLOCKCHAIN FOR GENERATIVE AI</div>
                     </div>
@@ -174,11 +174,11 @@ export default function Home() {
                     href={""}
                     target={"_blank"}
                     className={
-                      "text-[#FF9077] md:text-[32px] text-[18px] underline -mt-2"
+                      "text-[#FF9077] md:text-[28px] text-[18px] underline -mt-2"
                     }
                   >
                     READ WHITEPAPER
-                    <div className={"text-[26px]"}>(ALPHA VERSION)</div>
+                    <div className={"text-[22px]"}>(ALPHA VERSION)</div>
                   </Link>
                 </div>
                 <div className={"flex items-center mt-6 gap-6"}>
