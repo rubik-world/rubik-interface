@@ -60,5 +60,6 @@ body {
 }
 
 .title-shadow {
-  text-shadow: 1px 1px 1px #596AFF;
+  /*text-shadow: 1px 1px 1px #596AFF;*/
+  -webkit-text-stroke: 1px #596AFF;
 }

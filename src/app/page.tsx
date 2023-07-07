@@ -33,7 +33,7 @@ export default function Home() {
               <LogoIcon className={"w-[42px] h-[50px]"} />
               <div className={"text-[48px] font-bold title-shadow"}>RUBIK</div>
             </div>
-            <div className={"uppercase title-shadow text-[20px]"}>
+            <div className={"uppercase title-shadow text-[22px] font-bold"}>
               <div>THE World`s FIRST </div>
               <div>MODULAR BLOCKCHAIN </div>
               <div>FOR Generative ai</div>
@@ -48,17 +48,15 @@ export default function Home() {
               />
             </div>
             <div
-              style={{ textShadow: "1px 1px 1px blue" }}
               className={
-                "uppercase text-[22px] font-bold text-[#DEDFE3] text-center -mt-16"
+                "uppercase text-[24px] font-bold text-[#DEDFE3] text-center -mt-16 title-shadow"
               }
             >
               We democratize
             </div>
             <div
-              style={{ textShadow: "1px 1px 1px blue" }}
               className={
-                "uppercase text-[22px] font-bold text-[#DEDFE3] text-center"
+                "uppercase text-[24px] font-bold text-[#DEDFE3] text-center title-shadow"
               }
             >
               AI for ALL
@@ -119,7 +117,7 @@ export default function Home() {
           >
             <div
               className={
-                "w-[460px] max-w-full flex flex-col md:justify-between items-center md:items-start"
+                "w-[400px] max-w-full flex flex-col md:justify-between items-center md:items-start"
               }
             >
               <Image
@@ -131,7 +129,7 @@ export default function Home() {
               />
               <div
                 className={
-                  "md:text-[134px] text-[72px] font-bold logo-shadow tracking-wider flex items-center pt-32 md:-mt-20 md:-rotate-90"
+                  "md:text-[134px] text-[72px] font-bold logo-shadow tracking-wider flex items-center pt-32 md:-mt-20 md:-rotate-90 title-shadow"
                 }
               >
                 RUBIK
@@ -146,7 +144,7 @@ export default function Home() {
               <div
                 style={{ textShadow: "1px 1px 1px blue" }}
                 className={
-                  "uppercase text-[30px] font-bold text-[#DEDFE3] mt-auto text-center pb-4"
+                  "uppercase text-[30px] font-bold text-[#DEDFE3] mt-auto text-center pb-4 title-shadow"
                 }
               >
                 We democratize AI for ALL
@@ -161,7 +159,11 @@ export default function Home() {
                 <div>
                   <div className="flex items-center gap-4"></div>
                   <div style={{ textShadow: "1px 1px 1px blue" }}>
-                    <div className={"md:text-[36px] text-[22px] font-bold"}>
+                    <div
+                      className={
+                        "md:text-[36px] text-[22px] font-bold title-shadow"
+                      }
+                    >
                       <div>THE WORLD`S FIRST MODULAR</div>
                       <div>BLOCKCHAIN FOR GENERATIVE AI</div>
                     </div>
