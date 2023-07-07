@@ -21,33 +21,33 @@ body {
 }
 
 .header {
-  @apply md:h-[72px] h-[50px] bg-[rgba(var(--header-background-rgb))] md:w-[460px] w-[260px]  max-w-full mx-auto uppercase flex items-center justify-center;
+  @apply md:h-[56px] h-[50px] bg-[rgba(var(--header-background-rgb))] md:w-[460px] w-[260px]  max-w-full mx-auto uppercase flex items-center justify-center;
 }
 
 .header-triangle {
   @apply absolute w-0 h-0;
 }
 .header-triangle-left {
-  @apply header-triangle md:-left-[72px] -left-[50px] top-0 md:border-r-[72px] md:border-b-[72px] border-r-[50px] border-b-[50px];
+  @apply header-triangle md:-left-[56px] -left-[50px] top-0 md:border-r-[56px] md:border-b-[56px] border-r-[50px] border-b-[50px];
   border-color: transparent rgba(var(--header-background-rgb)) transparent transparent;
 }
 
 .header-triangle-right {
-  @apply header-triangle md:-right-[72px] -right-[50px] top-0 md:border-t-[72px] md:border-r-[72px] border-t-[50px] border-r-[50px];
+  @apply header-triangle md:-right-[56px] -right-[50px] top-0 md:border-t-[56px] md:border-r-[56px] border-t-[50px] border-r-[50px];
   border-color: rgba(var(--header-background-rgb)) transparent transparent transparent;
 }
 
 .footer {
-  @apply md:h-[60px] h-[40px] bg-[rgba(var(--header-background-rgb))] md:w-[220px] w-[100px] max-w-full mx-auto flex items-center justify-center;
+  @apply md:h-[50px] h-[40px] bg-[rgba(var(--header-background-rgb))] md:w-[220px] w-[100px] max-w-full mx-auto flex items-center justify-center;
 }
 
 .footer-triangle-left {
-  @apply header-triangle md:border-b-[60px] md:border-l-[60px] border-b-[40px] border-l-[40px] md:-left-[60px] -left-[40px] top-0;
+  @apply header-triangle md:border-b-[42px] md:border-l-[48px] border-b-[40px] border-l-[40px] md:-left-[48px] -left-[40px] -top-[3px];
   border-color: transparent transparent rgba(var(--header-background-rgb)) transparent;
 }
 
 .footer-triangle-right {
-  @apply header-triangle md:-right-[60px] -right-[40px] md:border-t-[60px] md:border-l-[60px] border-t-[40px] border-l-[40px] top-0;
+  @apply header-triangle md:-right-[42px] -right-[40px] md:border-t-[42px] md:border-l-[42px] border-t-[40px] border-l-[40px] -top-[3px];
   border-color:  transparent transparent transparent rgba(var(--header-background-rgb));
 }
 

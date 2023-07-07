@@ -144,7 +144,7 @@ export default function Home() {
               <div
                 style={{ textShadow: "1px 1px 1px blue" }}
                 className={
-                  "uppercase text-[30px] font-bold text-[#DEDFE3] mt-auto text-center pb-4 title-shadow"
+                  "uppercase text-[30px] font-bold text-[#DEDFE3] mt-auto text-center title-shadow"
                 }
               >
                 We democratize AI for ALL

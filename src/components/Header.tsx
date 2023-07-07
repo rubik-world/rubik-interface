@@ -3,10 +3,12 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <div>
-      <div className={"bg-[#3248F3] h-[30px]"} />
+      <div
+        className={"bg-[#3248F3] h-[30px] border-2 border-[#1a1ec0] border-b-4"}
+      />
       <header
         className={
-          "header -mt-[30px] relative font-semibold md:text-[20px] text-xs"
+          "header -mt-[28px] relative font-semibold md:text-[20px] text-xs border-b-4 border-b-[#1a1ec0]"
         }
       >
         <div className="header-triangle-left" />
