@@ -21,12 +21,7 @@ export default function Home() {
   if (width < 768) {
     return (
       <>
-        <main
-          className="flex flex-col relative min-h-screen"
-          style={{
-            backgroundImage: `url(/mobile-bg.png)`
-          }}
-        >
+        <main className="flex flex-col relative min-h-screen">
           <video
             src="/mobile-banner.mp4"
             className={`absolute object-cover w-full h-full`}
@@ -130,10 +125,10 @@ export default function Home() {
             >
               <Image
                 src={"/logo.svg"}
-                width={82}
-                height={96}
+                width={72}
+                height={86}
                 alt={"logo"}
-                className={`md:w-[82px] md:h-[96px] w-[52] h-[56px]`}
+                className={`md:w-[70px] md:h-[76px] w-[52] h-[56px]`}
               />
               <div
                 className={
@@ -166,7 +161,7 @@ export default function Home() {
             </div>
             <div className={`flex items-center`}>
               <div
-                className={`w-[380px] xl:w-[440px] transition-all duration-700 max-w-full ${
+                className={`w-[320px] xl:w-[350px] 2xl:w-[400px] transition-all duration-700 max-w-full ${
                   videoEnded ? "opacity-100 mt-0" : "opacity-0 mt-4"
                 }`}
               >
@@ -174,7 +169,7 @@ export default function Home() {
                   <div className="flex items-center gap-4"></div>
                   <div
                     className={
-                      "md:text-[32px] xl:text-[38px] text-[22px] font-bold title-shadow"
+                      "2xl:text-[36px] xl:text-[30px] text-[22px] font-bold title-shadow"
                     }
                   >
                     <div>THE WORLD`S FIRST</div>
@@ -189,16 +184,18 @@ export default function Home() {
                     href={""}
                     target={"_blank"}
                     className={
-                      "text-[#E84834] md:text-[28px] text-[18px] underline -mt-2"
+                      "text-[#E84834] 2xl:text-[28px] xl:text-[24px] text-[18px] underline -mt-2"
                     }
                   >
                     READ WHITEPAPER
-                    <div className={"text-[22px]"}>(ALPHA VERSION)</div>
+                    <div className={"2xl:text-[20px] xl:text-[18px]"}>
+                      (ALPHA VERSION)
+                    </div>
                   </Link>
                 </div>
                 <div className={"flex items-center mt-6 gap-6"}>
-                  <TwitterCircleIcon className={"w-[56px] h-[64px]"} />
-                  <DiscordCircleIcon className={"w-[56px] h-[64px]"} />
+                  <TwitterCircleIcon className={"w-[42px] h-[64px]"} />
+                  <DiscordCircleIcon className={"w-[42px] h-[64px]"} />
                 </div>
               </div>
             </div>
