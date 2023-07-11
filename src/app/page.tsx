@@ -22,31 +22,34 @@ export default function Home() {
     return (
       <>
         <main
-          className="flex flex-col relative"
+          className="flex flex-col relative min-h-screen"
           style={{
             backgroundImage: `url(/mobile-bg.png)`
           }}
         >
-          <Header />
-          <div className={"flex flex-col items-center"}>
+          <video
+            src="/mobile-banner.mp4"
+            className={`absolute object-cover w-full h-full`}
+            loop={true}
+            autoPlay={true}
+            muted={true}
+          />
+          <div className={"flex flex-col items-center absolute w-full"}>
             <div className="flex items-center gap-4 mb-4 mt-8">
               <LogoIcon className={"w-[42px] h-[50px]"} />
-              <div className={"text-[48px] font-bold title-shadow"}>RUBIK</div>
+              <div className={"text-[48px] font-bold title-shadow logo-shadow"}>
+                RUBIK
+              </div>
             </div>
-            <div className={"uppercase title-shadow text-[22px] font-bold"}>
-              <div>THE World`s FIRST </div>
-              <div>MODULAR BLOCKCHAIN </div>
-              <div>FOR Generative ai</div>
+            <div
+              className={
+                "uppercase title-shadow text-[22px] font-bold text-center"
+              }
+            >
+              <div>THE World`s FIRST MODULAR</div>
+              <div>BLOCKCHAIN FOR Generative ai</div>
             </div>
-            <div>
-              <Image
-                src={"/mobile-banner.png"}
-                alt={"banner"}
-                width={400}
-                height={400}
-                className={"-mt-12"}
-              />
-            </div>
+            <div className={"h-[360px]"} />
             <div
               className={
                 "uppercase text-[24px] font-bold text-[#DEDFE3] text-center -mt-16 title-shadow"
@@ -59,7 +62,13 @@ export default function Home() {
                 "uppercase text-[24px] font-bold text-[#DEDFE3] text-center title-shadow"
               }
             >
-              AI for ALL
+              <span
+                className={"primary-shadow mr-2"}
+                style={{ textShadow: "1px 1px 12px #E84834" }}
+              >
+                AI
+              </span>
+              for ALL
             </div>
 
             <div className={"flex items-start gap-2 mt-8"}>
@@ -67,7 +76,7 @@ export default function Home() {
               <Link
                 href={""}
                 target={"_blank"}
-                className={"text-[#FF9077] text-[18px] underline -mt-2"}
+                className={"text-[#E84834] text-[18px] underline -mt-2"}
               >
                 READ WHITEPAPER
                 <div className={"text-[14px]"}>(ALPHA VERSION)</div>
@@ -78,7 +87,6 @@ export default function Home() {
               <DiscordCircleIcon className={"w-[42px] h-[42px]"} />
             </div>
           </div>
-          <Footer />
         </main>
       </>
     );
@@ -129,7 +137,7 @@ export default function Home() {
               />
               <div
                 className={
-                  "md:text-[134px] text-[72px] font-bold logo-shadow tracking-wider flex items-center pt-32 md:-mt-20 md:-rotate-90 title-shadow"
+                  "md:text-[104px] xl:text-[124px] text-[72px] font-bold logo-shadow tracking-wider flex items-center pt-32 md:-mt-20 md:-rotate-90 title-shadow"
                 }
               >
                 RUBIK
@@ -142,31 +150,36 @@ export default function Home() {
               }`}
             >
               <div
-                style={{ textShadow: "1px 1px 1px blue" }}
                 className={
-                  "uppercase text-[30px] font-bold text-[#DEDFE3] mt-auto text-center title-shadow"
+                  "uppercase text-[30px] font-bold text-[#DEDFE3] mt-auto text-center"
                 }
               >
-                We democratize AI for ALL
+                <span className={"title-shadow"}>We democratize</span>
+                <span
+                  style={{ textShadow: "1px 1px 12px #E84834" }}
+                  className={"inline-block mx-2 primary-shadow"}
+                >
+                  AI
+                </span>
+                <span className={"title-shadow"}>for ALL</span>
               </div>
             </div>
             <div className={`flex items-center`}>
               <div
-                className={`w-[400px] transition-all duration-700 max-w-full ${
+                className={`w-[380px] xl:w-[440px] transition-all duration-700 max-w-full ${
                   videoEnded ? "opacity-100 mt-0" : "opacity-0 mt-4"
                 }`}
               >
                 <div>
                   <div className="flex items-center gap-4"></div>
-                  <div style={{ textShadow: "1px 1px 1px blue" }}>
-                    <div
-                      className={
-                        "md:text-[36px] text-[22px] font-bold title-shadow"
-                      }
-                    >
-                      <div>THE WORLD`S FIRST MODULAR</div>
-                      <div>BLOCKCHAIN FOR GENERATIVE AI</div>
-                    </div>
+                  <div
+                    className={
+                      "md:text-[32px] xl:text-[38px] text-[22px] font-bold title-shadow"
+                    }
+                  >
+                    <div>THE WORLD`S FIRST</div>
+                    <div>MODULAR BLOCKCHAIN</div>
+                    <div>FOR GENERATIVE AI</div>
                   </div>
                 </div>
 
@@ -176,7 +189,7 @@ export default function Home() {
                     href={""}
                     target={"_blank"}
                     className={
-                      "text-[#FF9077] md:text-[28px] text-[18px] underline -mt-2"
+                      "text-[#E84834] md:text-[28px] text-[18px] underline -mt-2"
                     }
                   >
                     READ WHITEPAPER
@@ -184,8 +197,8 @@ export default function Home() {
                   </Link>
                 </div>
                 <div className={"flex items-center mt-6 gap-6"}>
-                  <TwitterCircleIcon className={"w-[68px] h-[68px]"} />
-                  <DiscordCircleIcon className={"w-[68px] h-[68px]"} />
+                  <TwitterCircleIcon className={"w-[56px] h-[64px]"} />
+                  <DiscordCircleIcon className={"w-[56px] h-[64px]"} />
                 </div>
               </div>
             </div>

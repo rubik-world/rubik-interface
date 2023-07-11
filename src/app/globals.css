@@ -63,3 +63,7 @@ body {
   /*text-shadow: 1px 1px 1px #596AFF;*/
   -webkit-text-stroke: 1px #596AFF;
 }
+
+.primary-shadow {
+  -webkit-text-stroke: 1px #E84834;
+}

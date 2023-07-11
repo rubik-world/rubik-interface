@@ -8,7 +8,7 @@ export const ArrowIcon = ({ className }: { className?: string }) => {
     >
       <path
         d="M22.5867 14L0.522694 27.8564L0.522694 0.143594L22.5867 14Z"
-        fill="#FF9077"
+        fill="#E84834"
       />
     </svg>
   );
