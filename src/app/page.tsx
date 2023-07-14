@@ -9,8 +9,10 @@ import { Footer } from "@/components/Footer";
 import { useState } from "react";
 import Image from "next/image";
 import { useWindowSize } from "usehooks-ts";
+import { MobileHome } from "@/components/MobileHome";
 
 export default function Home() {
+  const [loaded, setLoaded] = useState(false);
   const [videoEnded, setVideoEnded] = useState(false);
   const { width } = useWindowSize();
 
@@ -19,98 +21,46 @@ export default function Home() {
   }
 
   if (width < 768) {
-    return (
-      <>
-        <main className="flex flex-col relative min-h-screen">
-          <video
-            src="/mobile-banner.mp4"
-            className={`absolute object-cover w-full h-full`}
-            loop={true}
-            autoPlay={true}
-            muted={true}
-          />
-          <div className={"flex flex-col items-center absolute w-full"}>
-            <div className="flex items-center gap-4 mb-4 mt-8">
-              <LogoIcon className={"w-[42px] h-[50px]"} />
-              <div className={"text-[48px] font-bold title-shadow logo-shadow"}>
-                RUBIK
-              </div>
-            </div>
-            <div
-              className={
-                "uppercase title-shadow text-[22px] font-bold text-center"
-              }
-            >
-              <div>THE World`s FIRST MODULAR</div>
-              <div>BLOCKCHAIN FOR Generative ai</div>
-            </div>
-            <div className={"h-[360px]"} />
-            <div
-              className={
-                "uppercase text-[24px] font-bold text-[#DEDFE3] text-center -mt-16 title-shadow"
-              }
-            >
-              We democratize
-            </div>
-            <div
-              className={
-                "uppercase text-[24px] font-bold text-[#DEDFE3] text-center title-shadow"
-              }
-            >
-              <span
-                className={"primary-shadow mr-2"}
-                style={{ textShadow: "1px 1px 12px #E84834" }}
-              >
-                AI
-              </span>
-              for ALL
-            </div>
-
-            <div className={"flex items-start gap-2 mt-8"}>
-              <ArrowIcon className={"w-[18px] h-[20px]"} />
-              <Link
-                href={""}
-                target={"_blank"}
-                className={"text-[#E84834] text-[18px] underline -mt-2"}
-              >
-                READ WHITEPAPER
-                <div className={"text-[14px]"}>(ALPHA VERSION)</div>
-              </Link>
-            </div>
-            <div className={"flex items-center mt-6 gap-3"}>
-              <TwitterCircleIcon className={"w-[42px] h-[42px]"} />
-              <DiscordCircleIcon className={"w-[42px] h-[42px]"} />
-            </div>
-          </div>
-        </main>
-      </>
-    );
+    return <MobileHome />;
   }
 
   return (
     <main className="flex min-h-screen flex-col justify-between relative">
       <video
+        src="/loading.mp4"
+        className={`absolute object-cover w-full h-full z-30 ${
+          loaded ? "hidden" : ""
+        }`}
+        loop={true}
+        autoPlay={true}
+        muted={true}
+      />
+      <video
         src="/banner.mp4"
-        className={`absolute object-cover w-full h-full ${
+        className={`absolute object-cover w-full h-full z-20 ${
           videoEnded ? "hidden" : ""
         }`}
         autoPlay={true}
         muted={true}
+        onLoadedData={() => {
+          setLoaded(true);
+        }}
         onTimeUpdate={e => {
-          if (e.timeStamp > 4000) setVideoEnded(true);
+          if (e.timeStamp > 5000) setVideoEnded(true);
         }}
         onEnded={() => setVideoEnded(true)}
       />
       <video
         src="/banner-loop.mp4"
-        className={`absolute object-cover w-full h-full ${
+        className={`absolute object-cover w-full h-full z-20 ${
           videoEnded ? "" : "hidden"
         }`}
         loop={true}
         autoPlay={true}
         muted={true}
       />
-      <div className={"absolute inset-0 flex flex-col justify-between"}>
+
+      <div className={"absolute inset-0 flex flex-col justify-between z-40"}>
         <Header />
         <div className={"h-full md:pt-0 pt-12"}>
           <div
@@ -128,12 +78,14 @@ export default function Home() {
                 width={72}
                 height={86}
                 alt={"logo"}
-                className={`md:w-[70px] md:h-[76px] w-[52] h-[56px]`}
+                className={`md:w-[70px] md:h-[76px] w-[52] h-[56px] transition-all duration-700 ${
+                  videoEnded ? "opacity-100 mt-0" : "opacity-0 mt-4"
+                }`}
               />
               <div
-                className={
-                  "md:text-[104px] xl:text-[124px] text-[72px] font-bold logo-shadow tracking-wider flex items-center pt-32 md:-mt-20 md:-rotate-90 title-shadow"
-                }
+                className={`md:text-[104px] xl:text-[124px] text-[72px] font-bold logo-shadow tracking-wider flex items-center pt-32 md:-mt-20 md:-rotate-90 title-shadow transition-all duration-700 ${
+                  videoEnded ? "opacity-100 mt-0" : "opacity-0 mt-4"
+                }`}
               >
                 RUBIK
               </div>
