@@ -1,7 +1,7 @@
 import Typewriter from "typewriter-effect";
-export const Footer = () => {
+export const Footer = ({ className }: { className?: string }) => {
   return (
-    <div className={"w-full h-[69px]"}>
+    <div className={`w-full h-[69px] transition-all duration-700 ${className}`}>
       <div
         className={
           "bg-[#3248F3] h-[30px] absolute flex items-center bottom-0 w-full text-gray-400 px-6 md:text-base text-xs border-2 border-[#1a1ec0]"

@@ -61,7 +61,7 @@ export default function Home() {
       />
 
       <div className={"absolute inset-0 flex flex-col justify-between z-40"}>
-        <Header />
+        <Header className={`${videoEnded ? "opacity-100" : "opacity-0"}`} />
         <div className={"h-full md:pt-0 pt-12"}>
           <div
             className={
@@ -153,7 +153,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Footer />
+        <Footer className={`${videoEnded ? "opacity-100" : "opacity-0"}`} />
       </div>
     </main>
   );

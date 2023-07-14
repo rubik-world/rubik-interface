@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export const Header = () => {
+export const Header = ({ className }: { className?: string }) => {
   return (
-    <div>
+    <div className={`transition-all duration-700 ${className}`}>
       <div
-        className={"bg-[#3248F3] h-[30px] border-2 border-[#1a1ec0] border-b-4"}
+        className={`bg-[#3248F3] h-[30px] border-2 border-[#1a1ec0] border-b-4`}
       />
       <header
         className={
