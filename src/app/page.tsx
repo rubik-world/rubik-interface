@@ -74,7 +74,7 @@ export default function Home() {
               }
             >
               <Image
-                src={"/logo.svg"}
+                src={"/logo.png"}
                 width={72}
                 height={86}
                 alt={"logo"}
